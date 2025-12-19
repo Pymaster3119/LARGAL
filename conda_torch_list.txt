@@ -1,5 +1,0 @@
-# packages in environment at C:\Users\anand\anaconda3\envs\radiowaves:
-#
-# Name                    Version                   Build  Channel
-torch                     2.8.0                    pypi_0    pypi
-torchvision               0.23.0                   pypi_0    pypi

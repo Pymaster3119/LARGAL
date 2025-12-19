@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 import dataparsing
 import tqdm
 
-# --- VAE model definitions (copied from notebook to ensure compatibility) ---
+# --- VAE model definitions
 import math
 
 class SelfAttention(nn.Module):
