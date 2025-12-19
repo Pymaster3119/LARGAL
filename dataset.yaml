@@ -4,4 +4,4 @@ val: dataset/images/val
 test: dataset/images/test
 nc: 1
 names:
-- class0
+- Radio Galaxy
