@@ -123,8 +123,7 @@ def train_classifiers(latents_dir, out_dir, classifiers=None, use_val=True, test
     # Define size groups. Assumption: include area==24 in medium and area==48 in medium
     size_groups = {
         'small': lambda a: a <= 24**2,
-        'medium': lambda a: (a > 24**2) & (a <= 48**2),
-        'large': lambda a: a > 48**2,
+        'medium': lambda a: (a > 24**2)
     }
 
     for size_name, mask_fn in size_groups.items():
@@ -250,7 +249,7 @@ def train_classifiers(latents_dir, out_dir, classifiers=None, use_val=True, test
 def main():
     # Simple, hard-coded configuration. Adjust these variables as needed.
     LATENTS_DIR = 'latents'
-    OUT_DIR = 'reg_models/classifiers'
+    OUT_DIR = 'classifiers'
     CLASSIFIERS = None  # None = train all
     USE_VAL = True
     TEST_ON_TEST = True

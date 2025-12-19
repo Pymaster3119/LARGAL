@@ -9,3 +9,4 @@ To finetune the VAE, you need to first crop out the radio galaxies from the data
 
 After the VAE is created, you can extract latent vectors from your crops with the script in extract_latents.py. This will create files in the directory latents/ representing the latent vectors, areas, and their classifications.
 
+The classifiers can be trained with the train_classifier_multisize, which trains two sets of classifiers: one is small (area < 24^2 pixels) and the other is medium (area > 24^2 pixels). It will test all samples and save them in classifiers/
