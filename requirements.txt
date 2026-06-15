@@ -2,3 +2,4 @@ numpy
 scikit-learn
 xgboost
 joblib
+ultralytics
