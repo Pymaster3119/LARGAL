@@ -204,6 +204,7 @@ def load_model(path, device):
             return model
 
     except Exception as e:
+        raise e
         last_exc = e
 
     # 2) Try loading as state_dict (weights-only) or with weights_only=False again
@@ -222,6 +223,7 @@ def load_model(path, device):
             model.eval()
             return model
     except Exception as e2:
+        raise e2
         last_exc = e2
 
     # Give helpful message including the last exception
@@ -237,7 +239,7 @@ def extract_latents_for_split(split_name, data, model, device, out_dir, batch_si
     all_areas = []
 
     with torch.no_grad():
-        for batch in loader:
+        for batch in tqdm.tqdm(loader):
             inputs = batch[0].float().to(device)
             labels = batch[1].long().cpu().numpy()
             areas = batch[2].float().cpu().numpy()
@@ -269,7 +271,7 @@ def extract_latents_for_split(split_name, data, model, device, out_dir, batch_si
     return lat_path, lab_path
 
 
-device = torch.device("cuda")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model_path = "VAEModelCubicFit.pth"
 out_dir = "latents"
 

@@ -106,12 +106,12 @@ def train_classifiers(latents_dir, out_dir, classifiers=None, use_val=True, test
                       random_state=42, use_smote=False, do_grid_search=False, n_jobs=1,
                       n_iter_search=20):
 
-    X_train, y_train, areas_train = load_latents_labels(latents_dir, 'traincubic')
+    X_train, y_train, areas_train = load_latents_labels(latents_dir, 'traincubicfit')
     if X_train is None:
         raise FileNotFoundError(f"Train latents/labels not found in {latents_dir}")
 
-    X_val, y_val, areas_val = load_latents_labels(latents_dir, 'valcubic')
-    X_test, y_test, areas_test = load_latents_labels(latents_dir, 'testcubic')
+    X_val, y_val, areas_val = load_latents_labels(latents_dir, 'valcubicfit')
+    X_test, y_test, areas_test = load_latents_labels(latents_dir, 'testcubicfit')
 
     estimators = get_estimators(random_state=random_state)
 

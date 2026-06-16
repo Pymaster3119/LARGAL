@@ -1,4 +1,5 @@
 import pickle
+import sys
 import numpy as np
 import torch
 from torch.utils.data import DataLoader, Dataset
@@ -14,6 +15,15 @@ transform = transforms.Compose([
     transforms.RandomRotation(degrees=360),
     transforms.RandomAffine(degrees=0, translate=(0.1, 0.1)),
 ])
+
+if "numpy._core" not in sys.modules:
+    import numpy.core
+    import numpy.core.multiarray
+    import numpy.core.numeric
+
+    sys.modules["numpy._core"] = np.core
+    sys.modules["numpy._core.multiarray"] = np.core.multiarray
+    sys.modules["numpy._core.numeric"] = np.core.numeric
 
 # Load data
 with open("traincubicfit_areas.pkl", 'rb') as f:
