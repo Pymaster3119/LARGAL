@@ -35,6 +35,9 @@ The system handles galaxies of different sizes separately (small: area < 24² pi
    pip install -r requirements.txt
    ```
 
+3. Download weight files:
+    Download VAE weights here: https://drive.google.com/file/d/1yrI4OxyD2WN8Fu1mKQ8B5AZVo3zXMhqj/view?usp=sharing
+
 ### Dependencies
 
 - **numpy**: Numerical computing
