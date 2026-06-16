@@ -1,13 +1,3 @@
-#!/usr/bin/env python3
-"""
-Train multiple sklearn classifiers from latent vectors + label npy files.
-
-Features:
-- Loads latents_{split}sep.npy and labels_{split}sep.npy from a latents dir
-- Standard scaling, optional SMOTE, optional class/sample weighting
-- Optional randomized hyperparameter search per-estimator
-- Evaluates on val/test splits and saves each model+scaler as joblib
-"""
 import os
 import numpy as np
 import joblib
